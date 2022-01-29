@@ -19,6 +19,10 @@ use Illuminate\Http\Request;
 
 Route::group(['namespace' => 'Api', 'as' => 'api.'], function () {
 
+    Route::post('/auth/login', 'AuthController@login')->name('login');
+    Route::post('/me', 'AuthController@me')->name('me');
+    Route::post('/auth/logout', 'AuthController@logout')->name('logout');
+
     Route::apiResource('/company', 'CompanyController');
 
 });
